@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styl.css"><title>Login Form</title>
+    <meta property="og:title" content="Painel black venom">
+    <meta property="og:description" content="painel só para revendedores autorizados">
+    <meta property="og:image" content="gr.jpg">
+    <meta property="og:url" content="https://painel-black-venom.netlify.app">
+</head><body><button onclick="g()" class="showform">Clica me </button><div class="background"></div><div class="loginbox"><header>
+      <span class="title">login...</span>
+      <span class="close">×</span>
+    </header>
+    <main>
+      <div class="email">
+        <span>Email...</span>
+        <input placeholder="E-mail"
+        id="email"
+        name="email"
+        type="email"
+        class="input"
+        required="">
+      </div>
+      <div class="password">
+        <span>Password...</span>
+        <input placeholder="Password"
+        id="password"
+        type="password"
+        class="input"
+        required="">
+      </div>
+      <div class="noacc">
+        black venom <a href="">sair</a>
+      </div></main><footer><button onclick="gr()" class="login-button">login</button>
+    </footer>
+  </div><script src="gr.js"></script>
+  <center><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p id="errorMessage" style="color: red;"></p>
+        <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-auth-compat.js"></script><script>
+      const btn = document.querySelector("button");
+const divMessage = document.querySelector(".alert");
+const msg = "autenticando🔔";
+function ativar(msg) {
+  const message = document.createElement("div");
+  message.classList.add("message");
+  message.innerText = msg;
+  divMessage.appendChild(message);
+  setTimeout(() => {
+    message.style.display = "none";
+  }, 3000);
+}
+btn.addEventListener("click", () => {
+  ativar(msg);
+});</script>
+<!-- Your login and signup scripts -->
+<script>
+    function gr(){const n=document.getElementById("email").value,t=document.getElementById("password").value,i=document.getElementById("errorMessage");let r;if(Swal.fire({icon:"success",title:"fazendo login",html:"aguarde a verificação <b><\/b> milliseconds.",timer:3e3,timerProgressBar:!0,didOpen:()=>{Swal.showLoading();const n=Swal.getPopup().querySelector("b");r=setInterval(()=>{n.textContent=`${Swal.getTimerLeft()}`},100)},willClose:()=>{clearInterval(r)}}).then(n=>{n.dismiss===Swal.DismissReason.timer&&console.log("I was closed by the timer")}),!n||!t){i.textContent=" não deixe nenhum campo vazio {email}👎{senha}.";return}firebase.auth().signInWithEmailAndPassword(n,t).then(()=>{alert("logado com sucesso"),window.location.href="painel.html"}).catch(()=>{i.textContent="usuário não encontrado 🔍"})}function signUp(){const n=document.getElementById("email").value,t=document.getElementById("password").value,i=document.getElementById("errorMessage");if(!n||!t){i.textContent="inválido.";return}firebase.auth().createUserWithEmailAndPassword(n,t).then(()=>{alert("sucesso"),window.location.href="venom/hr.html"}).catch(()=>{i.textContent="Wrong email or password"})}function forgotPassword(){const t=document.getElementById("email").value,n=document.getElementById("errorMessage");if(!t){n.textContent="Please enter your email to reset the password.";return}firebase.auth().sendPasswordResetEmail(t).then(()=>{n.textContent="Password reset email sent. Check your inbox."}).catch(t=>{n.textContent=t.message})}
+    const firebaseConfig={apiKey:"AIzaSyB5v0e77dvzHINhHzCKeMs6QPjqo7Z7img",authDomain:"login-database-black.firebaseapp.com",databaseURL:"https://login-database-black-default-rtdb.firebaseio.com",projectId:"login-database-black",storageBucket:"login-database-black.appspot.com",messagingSenderId:"768021690283",appId:"1:768021690283:web:221e866026541faffa04ee"};firebase.initializeApp(firebaseConfig);
+    </script><script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js
+"></script><linkhref="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css
+" rel="folha de estilo"><script>
+    function g(){Swal.fire({title:"bem vindo!",text:"de volta ao painel Galaxy modez faça login para ter acesso ao painel adm !",icon:"warning"})}
+    </script></body></html>

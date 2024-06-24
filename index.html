@@ -1,64 +1,13 @@
-
-<!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styl.css"><title>Login Form</title>
-    <meta property="og:title" content="Painel black venom">
-    <meta property="og:description" content="painel só para revendedores autorizados">
-    <meta property="og:image" content="gr.jpg">
-    <meta property="og:url" content="https://painel-black-venom.netlify.app">
-</head><body><button onclick="g()" class="showform">Clica me </button><div class="background"></div><div class="loginbox"><header>
-      <span class="title">login...</span>
-      <span class="close">×</span>
-    </header>
-    <main>
-      <div class="email">
-        <span>Email...</span>
-        <input placeholder="E-mail"
-        id="email"
-        name="email"
-        type="email"
-        class="input"
-        required="">
-      </div>
-      <div class="password">
-        <span>Password...</span>
-        <input placeholder="Password"
-        id="password"
-        type="password"
-        class="input"
-        required="">
-      </div>
-      <div class="noacc">
-        black venom <a href="">sair</a>
-      </div></main><footer><button onclick="gr()" class="login-button">login</button>
-    </footer>
-  </div><script src="gr.js"></script>
-  <center><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p id="errorMessage" style="color: red;"></p>
-        <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-auth-compat.js"></script><script>
-      const btn = document.querySelector("button");
-const divMessage = document.querySelector(".alert");
-const msg = "autenticando🔔";
-function ativar(msg) {
-  const message = document.createElement("div");
-  message.classList.add("message");
-  message.innerText = msg;
-  divMessage.appendChild(message);
-  setTimeout(() => {
-    message.style.display = "none";
-  }, 3000);
-}
-btn.addEventListener("click", () => {
-  ativar(msg);
-});</script>
-<!-- Your login and signup scripts -->
+<!DOCTYPE html><html lang=en><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>painel</title><link rel=stylesheet href=./style.css /><script src=https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js></script><script src=https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js></script><style>body,html{width:100%;height:100%;background:-webkit-linear-gradient(25deg,#ffbe0b,#fb5607,#ff006e,#8338ec,#3a86ff);display:flex;justify-content:center;align-items:center}*{margin:0;padding:0;box-sizing:border-box;border:none;outline:0}#content_container{width:100%;height:100%}#form_container{width:100%;height:100%;background:url(l.jpg) no-repeat 0 0 scroll;background-color:#0c0c0c;background-size:100% 100%;height:100%;width:100%;box-shadow:0 0 50px -20px #000;border-radius:2%;overflow:hidden}#form_header_container{width:100%;height:5%;display:flex;justify-content:center;align-items:center;float:left;padding:20px;padding-bottom:30px;padding-top:30px;border-bottom:1px solid transparent;border-image:-webkit-linear-gradient(25deg,#ffbe0b,#fb5607,#ff006e,#8338ec,#3a86ff) 20;background:#000}#form_header{display:inline-block;font-size:15px;font-family:Bowlby One SC;font-weight:900;text-transform:uppercase;letter-spacing:1px;background:-webkit-linear-gradient(25deg,#ffbe0b,#fb5607,#ff006e,#8338ec,#3a86ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}#form_content_container{width:100%;height:90%;float:left;display:flex;justify-content:center;align-items:center;padding-top:30px}#form_content_inner_container{width:75%;height:100%;float:left}input{width:100%;height:40px;padding-left:10px;margin-bottom:20px;border:2px solid #008000;border-radius:30px;background:#000;font-family:Montserrat;font-weight:500;color:#fff;font-size:12px;border-bottom:2px solid transparent;border-top-left-radius:20%;border-top-right-radius:30%;border-image:-webkit-linear-gradient(25deg,#00c4ff,#fb5607,#ff006e,#8338ec,#00ffa6) 1}input:hover{box-shadow:0 0 50px #fffaf0}#button_container{width:100%;height:10%;background-image:linear-gradient(80deg,#293658,#fb5607 50%,#ff006e 50%,#000);color:#fff;float:left;margin-top:5px}#button_container button{width:50%;height:100%;float:left;background:0 0;color:inherit;font-family:Montserrat;letter-spacing:1px;font-weight:900;font-size:12px;cursor:pointer;display:flex;justify-content:center;align-items:center}#button_container:hover{box-shadow:0 0 50px #fff}a{text-decoration:none;font-size:20px;border:2px solid #3cfd08;border-radius:30px;color:#f00}a:hover{background:#fff}</style></head><body><head><meta charset=utf-8 /><title>add + Firebase Database</title><link rel=preconnect href=https://fonts.gstatic.com /><link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel=stylesheet /><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel=stylesheet /><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel=stylesheet /><link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel=stylesheet /><link rel=stylesheet type=text/css href=index.css /></head><body><div id=content_container><div id=form_container><a href=index.html>sair</a><div id=form_header_container><h2 id=form_header> Add + painel</h2></div><div id=form_content_container><div id=form_content_inner_container><input type=text id=full_name placeholder="Nome do usuário" /><input type=email id=email placeholder=blackvenom@gmail.com /><input type=password id=password placeholder="Password do usuário" /><input type=text id=days placeholder=dias/user /><input type=text id=data placeholder="data atual🧾" /><div id=button_container><button onclick=log()>black venom <svg xmlns=http://www.w3.org/2000/svg width=16 height=16 fill=currentColor class="bi bi-arrow-right-circle" viewBox="0 0 16 16"><path fill-rule=evenodd d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" /></svg></button> <button onclick=register()>Register</button></div></div></div></div></div></body><script src=https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js></script><script src=https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js></script><script src=index.js></script><script src=https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js></script><script src=https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js></script><script src=https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js></script><script src=https://www.gstatic.com/firebasejs/7.17.1/firebase.js></script><script src=./script.js></script><script src=index.js></script><script src=./script.js></script><script>function register(){if(email=document.getElementById("email").value,password=document.getElementById("password").value,full_name=document.getElementById("full_name").value,days=document.getElementById("days").value,data=document.getElementById("data").value,validate_email(email)==!1||validate_password(password)==!1){alert("Email or Password is Outta Line!!");return}if(validate_field(full_name)==!1||validate_field(days)==!1||validate_field(data)==!1){alert("One or More Extra Fields is Outta Line!!");return}auth.createUserWithEmailAndPassword(email,password).then(function(){var n=auth.currentUser,t=database.ref(),i={email:email,full_name:full_name,days:days,data:data,last_login:Date.now()};t.child("users/"+n.uid).set(i);alert("User Created!!")}).catch(function(n){var i=n.code,t=n.message;alert(t)})}function login(){if(email=document.getElementById("email").value,password=document.getElementById("password").value,validate_email(email)==!1||validate_password(password)==!1){alert("Email or Password is Outta Line!!");return}auth.signInWithEmailAndPassword(email,password).then(function(){var n=auth.currentUser,t=database.ref(),i={last_login:Date.now()};t.child("users/"+n.uid).update(i);alert("User Logged In!!")}).catch(function(n){var i=n.code,t=n.message;alert(t)})}function validate_email(n){return expression=/^[^@]+@\w+(\.\w+)+\w$/,expression.test(n)==!0?!0:!1}function validate_password(n){return n<6?!1:!0}function validate_field(n){return n==null?!1:n.length<=0?!1:!0}function log(){alert("erro🚫 clica no botão registar")}const firebaseConfig = {
+apiKey: "AIzaSyA1lSfop9H7ypPn09lDMMuFwazI6CkaoFk",
+authDomain: "black-venom-14643.firebaseapp.com",
+databaseURL: "https://black-venom-14643-default-rtdb.firebaseio.com",
+projectId: "black-venom-14643",
+storageBucket: "black-venom-14643.appspot.com",
+messagingSenderId: "275551131236",
+appId: "1:275551131236:web:4b48160b26c2dd7e1e7171"
+};firebase.initializeApp(firebaseConfig);const auth=firebase.auth(),database=firebase.database()</script>
 <script>
-    function gr(){const n=document.getElementById("email").value,t=document.getElementById("password").value,i=document.getElementById("errorMessage");let r;if(Swal.fire({icon:"success",title:"fazendo login",html:"aguarde a verificação <b><\/b> milliseconds.",timer:3e3,timerProgressBar:!0,didOpen:()=>{Swal.showLoading();const n=Swal.getPopup().querySelector("b");r=setInterval(()=>{n.textContent=`${Swal.getTimerLeft()}`},100)},willClose:()=>{clearInterval(r)}}).then(n=>{n.dismiss===Swal.DismissReason.timer&&console.log("I was closed by the timer")}),!n||!t){i.textContent=" não deixe nenhum campo vazio {email}👎{senha}.";return}firebase.auth().signInWithEmailAndPassword(n,t).then(()=>{alert("logado com sucesso"),window.location.href="home.html"}).catch(()=>{i.textContent="usuário não encontrado 🔍"})}function signUp(){const n=document.getElementById("email").value,t=document.getElementById("password").value,i=document.getElementById("errorMessage");if(!n||!t){i.textContent="inválido.";return}firebase.auth().createUserWithEmailAndPassword(n,t).then(()=>{alert("sucesso"),window.location.href="venom/hr.html"}).catch(()=>{i.textContent="Wrong email or password"})}function forgotPassword(){const t=document.getElementById("email").value,n=document.getElementById("errorMessage");if(!t){n.textContent="Please enter your email to reset the password.";return}firebase.auth().sendPasswordResetEmail(t).then(()=>{n.textContent="Password reset email sent. Check your inbox."}).catch(t=>{n.textContent=t.message})}
-    const firebaseConfig={apiKey:"AIzaSyB5v0e77dvzHINhHzCKeMs6QPjqo7Z7img",authDomain:"login-database-black.firebaseapp.com",databaseURL:"https://login-database-black-default-rtdb.firebaseio.com",projectId:"login-database-black",storageBucket:"login-database-black.appspot.com",messagingSenderId:"768021690283",appId:"1:768021690283:web:221e866026541faffa04ee"};firebase.initializeApp(firebaseConfig);
-    </script><script src="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js
-"></script><linkhref="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css
-" rel="folha de estilo"><script>
-    function g(){Swal.fire({title:"bem vindo!",text:"de volta ao painel black venom faça login para ter acesso ao painel adm !",icon:"warning"})}
-    </script></body></html>
+  // Verifica se o usuário está autenticado ao carregar a página
+
+</script></body></html>
